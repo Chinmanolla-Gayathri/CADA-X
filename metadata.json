@@ -1,0 +1,6 @@
+{
+  "name": "UrbanCadastral AI",
+  "description": "AI-Assisted Urban Parcel Mapping & Cadastral Feature Extraction System using Drone Imagery (SIH 26012)",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* Leaflet Container & Clean GIS Styling */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #e2e8f0 !important;
+  font-family: inherit;
+}
+
+/* Custom Tooltip Styling for GIS Cadastre (Light Professional Theme) */
+.cadastral-tooltip {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+  padding: 4px 8px !important;
+  font-weight: 500 !important;
+}
+
+.leaflet-tooltip-top:before {
+  border-top-color: #cbd5e1 !important;
+}
+.leaflet-tooltip-bottom:before {
+  border-bottom-color: #cbd5e1 !important;
+}
+.leaflet-tooltip-left:before {
+  border-left-color: #cbd5e1 !important;
+}
+.leaflet-tooltip-right:before {
+  border-right-color: #cbd5e1 !important;
+}
+
+/* Custom Scrollbar for GIS panels */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Professional Geospatial Vector Canvas Animations */
+@keyframes geoScan {
+  0% {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+}
+
+@keyframes parcelDash {
+  0% {
+    stroke-dashoffset: 120;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulseBenchmark {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.85;
+  }
+}
+
+@keyframes analysisGlow {
+  0%, 100% {
+    stroke-opacity: 0.25;
+    fill-opacity: 0.03;
+  }
+  50% {
+    stroke-opacity: 0.6;
+    fill-opacity: 0.09;
+  }
+}
+
+.animate-geo-scan {
+  animation: geoScan 16s ease-in-out infinite;
+}
+
+.animate-parcel-dash {
+  animation: parcelDash 20s linear infinite;
+}
+
+.animate-pulse-benchmark {
+  animation: pulseBenchmark 3.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.animate-analysis-glow {
+  animation: analysisGlow 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-geo-scan,
+  .animate-parcel-dash,
+  .animate-pulse-benchmark,
+  .animate-analysis-glow {
+    animation: none !important;
+  }
+}
